@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">SampleInstagram</string>
+    <string name="login">login</string>
+    <string name="log_in">Log In</string>
+    <string name="name">name</string>
+    <string name="password">password</string>
+    <string name="createAccount">Create An Account</string>
+    <string name="create_account_header">Create Account</string>
+    <string name="create">create</string>
+    <string name="re_enter_password">re-enter password</string>
+    <string name="title_activity_create_account">CreateAccountActivity</string>
+    <!--
+    This string is used for square devices and overridden by hello_world in
+    values-round/strings.xml for round devices.
+    -->
+    <string name="hello_world">Hello Square World!</string>
+    <string name="enter_username">username</string>
+    <string name="title_activity_feed">ActivityFeedActivity</string>
+</resources>
