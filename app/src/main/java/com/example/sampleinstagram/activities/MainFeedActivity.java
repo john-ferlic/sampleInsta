@@ -1,10 +1,5 @@
 package com.example.sampleinstagram.activities;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
-import android.content.Context;
 import android.os.Bundle;
 
 import com.example.sampleinstagram.R;
@@ -15,19 +10,19 @@ import com.example.sampleinstagram.models.UserList;
 
 import java.util.List;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
 public class MainFeedActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
-    private MainFeedAdapter mAdapter;
     private LinearLayoutManager layoutManager;
-    private Context context;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        context = this;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_feed);
         setUpView();
@@ -45,7 +40,7 @@ public class MainFeedActivity extends AppCompatActivity {
             public void onResponse(Call<UserList> call, Response<UserList> response) {
                 UserList userList = response.body();
                 List<UserList.Datum> datumList = userList.data;
-                final MainFeedAdapter adapter = new MainFeedAdapter(context, datumList);
+                final MainFeedAdapter adapter = new MainFeedAdapter(datumList);
                 recyclerView.setAdapter(adapter);
             }
 
