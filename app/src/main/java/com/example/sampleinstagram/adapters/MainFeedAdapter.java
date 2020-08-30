@@ -37,7 +37,7 @@ public class MainFeedAdapter extends RecyclerView.Adapter<MainFeedAdapter.MainFe
 
     @Override
     public void onBindViewHolder(@NonNull MainFeedViewHolder holder, int position) {
-
+        new DownloadImageTask(holder.image).execute(mUsers.get(position).avatar);
         holder.userIdTextView.setText(mUsers.get(position).id.toString());
         holder.userNameTextView.setText(mUsers.get(position).first_name);
     }
