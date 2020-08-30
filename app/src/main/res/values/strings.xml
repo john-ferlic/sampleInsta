@@ -16,4 +16,5 @@
     <string name="hello_world">Hello Square World!</string>
     <string name="enter_username">username</string>
     <string name="title_activity_feed">ActivityFeedActivity</string>
+    <string name="image">image</string>
 </resources>
