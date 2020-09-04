@@ -1,6 +1,8 @@
 package com.example.sampleinstagram.apicallsretro;
 
 import com.example.sampleinstagram.models.User;
+import com.example.sampleinstagram.models.UserList;
+
 import retrofit2.Call;
 
 public class CallManager {
@@ -19,6 +21,11 @@ public class CallManager {
 
     public Call<User> requestUserInfo(){
         Call<User> call = apiInterface.getUser();
+        return call;
+    }
+
+    public Call<UserList> requestUserListInfo(String pageNum){
+        Call<UserList> call = apiInterface.doGetUserList(pageNum);
         return call;
     }
 }
