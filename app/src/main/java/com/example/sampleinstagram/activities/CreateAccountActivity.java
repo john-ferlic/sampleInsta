@@ -50,6 +50,15 @@ public class CreateAccountActivity extends AppCompatActivity implements View.OnC
                     Toast.makeText(getApplicationContext(), "Account Created!", Toast.LENGTH_SHORT).show();
                 } else {
                     Toast.makeText(this, "Enter Valid Credentials", Toast.LENGTH_SHORT).show();
+                    if (!createUserPresenter.isLength(password)) {
+                        pass.setError("Password must be longer");
+                    }
+                    if (!createUserPresenter.isMatchingAndNonEmpty(user, password, pass2.getText().toString())) {
+                        pass.setError("Passwords must match");
+                    }
+                    if (!createUserPresenter.hasCapitalLetter(password)) {
+                        pass.setError("Password must have capital letter");
+                    }
                 }
         }
     }
